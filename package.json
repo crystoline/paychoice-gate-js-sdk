@@ -20,6 +20,10 @@
     "prepare": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crystoline/paychoice-gate-js-sdk.git"
+  },
+  "author": "crystoline",
   "license": "ISC"
 }
