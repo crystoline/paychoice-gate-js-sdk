@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="build/main.js"></script> -->
+    <script src="https://staging-gateway.paychoice.ng/sdk/main.js"></script>
+</head>
+
+<body>
+<div id="paychoice-gate">
+    <h1>Make Payment</h1>
+
+    <button onclick="makePayment()">Pay Now</button>
+</div>
+  
+
+</body>
+<script>
+    var gate = new PayChoiceGate({
+            MerchantId: 'UPL_48ZCRG3HH7Q',
+            ProductId: 'UPL003',
+            SecretKey: '5C9BAC426B1DC'
+        });
+
+    function makePayment(){
+        gate.init({
+            Amount: 10000, //amount in kobo
+            Currency: '566', //code for naira
+            TransactionNo: Math.round(Math.random() * 10000000), //Unique transaction ref
+            Email: 'crystoline@gmail.com', //customer email
+            NotifyUrl: 'http://localhost', //optional Notification URL
+            Description: 'Hello', //description
+        }, function(response){ //callback
+            console.log('i got the response here', response);
+            //respone e.g {transaction_id: "6607590"}
+            // perform actions like making API call to the backend
+        });
+    }
+    
+    //  window.addEventListener("DOMContentLoaded", function() {
+    
+    // }, false);
+
+
+
+</script>
+
+</html>
