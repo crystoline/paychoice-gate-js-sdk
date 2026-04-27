@@ -5,7 +5,7 @@ import {GatePaymentRequest} from "./gatePaymentRequest";
 
 export class PayChoiceGate {
     private static baseUrl = 'https://gateway.paychoice.ng';
-    private static baseUrlStaging = 'https://staging-gateway.paychoice.ng';
+    private static baseUrlStaging = 'https://staging.gateway.paychoice.ng';
     public static callback: PaymentResponse | null;
 
     constructor(private config: IConfig, private env: string = 'test') {
