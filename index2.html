@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <!-- <script src="build/main.js"></script> -->
-    <script src="https://staging.gateway.paychoice.ng/sdk/main.js"></script>
+    <script src="https://gateway.paychoice.ng/sdk/main.js"></script>
 </head>
+
 
 <body>
 <div id="paychoice-gate">
@@ -21,9 +22,9 @@
 </body>
 <script>
     var gate = new PayChoiceGate({
-            MerchantId: 'UPL_48ZCRG3HH7Q',
-            ProductId: 'UPL002',
-            SecretKey: '5C9BAC426B1DC'
+            MerchantId: 'UPL_48ZCRG3HH7Qxxx',
+            ProductId: 'UPL003',
+            SecretKey: '5C9BAC426B1DC',
         });
 
     function makePayment(){
@@ -37,16 +38,9 @@
         }, function(response){ //callback
             console.log('i got the response here', response);
             //respone e.g {transaction_id: "6607590"}
-             // perform actions like making API call to the backend
+            // perform actions like making API call to the backend
             // do performing re-query 
-
-
-
-            //GET request
-            // var RequeryURL = 'https://staging.gateway.paychoice.ng/upl/merchant/requery?transaction_id=' + transactionId ='&merchantId=' + merchantId + '&hash=' + hash;
-            //hash is sha256 of => transaction_id + merchantId + secretKey;
-
-    });
+        });
     }
     
     //  window.addEventListener("DOMContentLoaded", function() {
